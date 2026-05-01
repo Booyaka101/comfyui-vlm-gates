@@ -1,0 +1,9 @@
+examples/
+tests/
+docs/
+.github/
+.gitignore
+.npmignore
+tsconfig.json
+*.log
+node_modules/

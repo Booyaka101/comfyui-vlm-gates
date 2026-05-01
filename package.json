@@ -1,0 +1,64 @@
+{
+  "name": "comfyui-vlm-gates",
+  "version": "0.1.0",
+  "description": "Multi-VLM consensus gates and quality scoring for AI image pipelines. Catches bad renders before they ship.",
+  "keywords": [
+    "comfyui",
+    "vlm",
+    "vision-language-model",
+    "ollama",
+    "image-quality",
+    "ai-art",
+    "qa",
+    "diffusion",
+    "flux",
+    "stable-diffusion"
+  ],
+  "homepage": "https://github.com/Booyaka101/comfyui-vlm-gates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Booyaka101/comfyui-vlm-gates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Booyaka101/comfyui-vlm-gates/issues"
+  },
+  "license": "Apache-2.0",
+  "author": "Booyaka101 <cbosch101@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./presets/*": {
+      "types": "./dist/presets/*.d.ts",
+      "import": "./dist/presets/*.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  }
+}
