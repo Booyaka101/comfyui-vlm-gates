@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        # vitest 5 requires Node 22+; the package itself still supports >=18
+        # (engines in package.json), this matrix only covers the test runner.
+        node-version: [22.x, 24.x]
     steps:
       - uses: actions/checkout@v4
       # Our own tool. Locks the runner image's tool versions and diffs them when
